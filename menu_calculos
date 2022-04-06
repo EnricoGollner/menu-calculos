@@ -1,0 +1,79 @@
+Algoritmo "Menu de opções de cálculos"
+
+Const
+pi <- 3,1416 //Declarando a constante PI
+
+Var
+opcao: inteiro
+lado, area, altura, comprimento, raio, peso, imc:real
+
+Inicio
+repita
+    escreval("Escolha digitando um número:")
+    escreval("1. Calcular a área de um quadrado")
+    escreval("2. Calcular a área de um retângulo")
+    escreval("3. Calcular a área de uma circunferência")
+    escreval("4. Calcular IMC")
+    escreval("5. Sair do programa")
+    leia(opcao)
+    se (opcao < 1) ou (opcao > 5) entao
+        escreval("") //somente para pular linha
+        escreval("Opção inválida! Digite uma nova opção:")
+        escreval("") //somente para pular linha
+    fimse
+    se opcao=1 entao
+        limpatela
+        escreval("Digite a medida do lado do quadrado:")
+        leia(lado)
+        area <- lado * lado
+        escreval("A área desse quadrado será = ", area)
+    fimse
+    se opcao=2 entao
+        limpatela
+        escreval("Para calcular a área de um retângulo:")
+        escreval("Digite o comprimento do retângulo:")
+        leia(comprimento)
+        escreval("Agora, digite a altura do mesmo:")
+        leia(altura)
+        area <- comprimento * altura
+        escreval("A área desse retângulo será = ", area)
+    fimse
+    se opcao=3 entao
+        limpatela
+        escreval("Para calcular a área de uma circunferência:")
+        escreval("Digite a medida do raio da circunferência:")
+        leia(raio)
+        area <- pi * raio * raio
+        escreval("A área dessa circunferência será = ", area)
+    fimse
+    se opcao = 4 entao
+        limpatela
+        escreval("Para calcular o IMC:")
+        escreval("Digite o peso da pessoa:")
+        leia(peso)
+        escreval("Agora, digite a altura da pessoa:")
+        leia(altura)
+        imc <- peso / (altura^2)
+        escreval("O índice de massa corporal(IMC) dessa pessoa é:", imc)
+
+        se IMC<20 entao
+            escreval("PESSOA ABAIXO DO PESO")
+            senao
+                se ((IMC>=20) E (IMC<25)) ENTAO
+                    ESCREVAL("PESSOA COM O PESO NORMAL")
+                    senao
+                        se ((IMC>=25) E (IMC<30)) ENTAO
+                            ESCREVAL("PESSOA COM SOBREPESO")
+                            senao
+                                se ((IMC>=30) E (IMC<40)) ENTAO
+                                    ESCREVAL("PESSOA OBESA")
+                                    senao
+                                        ESCREVAL("OBESO MÓRBIDO")
+                                fimse
+                        fimse
+                fimse
+        fimse
+
+    fimse
+ate opcao = 5
+fimalgoritmo
